@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('docs/{file?}', 'DocsController@show');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('docs/{file?}', 'DocsController@show');
+Route::get('docs/images/{image}', 'DocsController@image');
