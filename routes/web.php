@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('docs/{file?}', function ($file = null) {
-    $text = (new App\Documentation)->get($file);
+Route::get('docs/{file?}', 'DocsController@show');
 
-    return app(Parsedown::class)->text($text);
-    
-});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
